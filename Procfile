@@ -1,0 +1,1 @@
+web: gunicorn petoteca.wsgi --log-file -
