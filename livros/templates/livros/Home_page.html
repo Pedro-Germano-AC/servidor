@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+    <script src="{% static 'livros/script.js' %}"></script>
     <title>PETOTECA</title>
 
     <!-- Bootstrap CSS CDN -->
@@ -33,12 +33,12 @@
                     <ul class="list-unstyled collapse" id="homeSubmenu" style="">
                         <li>
 
-                                <a href="{% static url 'livros:home-page' %}">Todos</a></h1>
+                                <a href="{% url 'livros:home-page' %}">Todos</a></h1>
 
                         </li>
                         <li>
                             {% for categoria in Categorias %}
-                                <a href="{% static url 'livros:home-page' %}?q1={{categoria.nome}}" >{{categoria.nome}}</a></h1>
+                                <a href="{% url 'livros:home-page' %}?q1={{categoria.nome}}" >{{categoria.nome}}</a></h1>
                             {% endfor %}
                         </li>
                     </ul>
@@ -133,7 +133,7 @@
     <!-- Bootstrap JS -->
     <script src="{% static 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js' %}" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
-    <script src="{% static 'livros/script.js' %}"></script>
+
 
 </body>
 </html>
