@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <script src="{% static 'livros/script.js' %}"></script>
+
     <title>PETOTECA</title>
 
     <!-- Bootstrap CSS CDN -->
@@ -23,27 +23,26 @@
         <!-- Sidebar  -->
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <h3>PETOTECA</h3>
+              <h3>PETOTECA</h3>
             </div>
-
+          
             <ul class="list-unstyled components">
-                <p>Menu</p>
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle collapsed">Categorias</a>
-                    <ul class="list-unstyled collapse" id="homeSubmenu" style="">
-                        <li>
-
-                                <a href="{% url 'livros:home-page' %}">Todos</a></h1>
-
-                        </li>
-                        <li>
-                            {% for categoria in Categorias %}
-                                <a href="{% url 'livros:home-page' %}?q1={{categoria.nome}}" >{{categoria.nome}}</a></h1>
-                            {% endfor %}
-                        </li>
-                    </ul>
-                </li>
+              <p>Menu</p>
+              <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle collapsed">Categorias</a>
+                <ul class="list-unstyled collapse" id="homeSubmenu">
+                  <li>
+                    <a href="{% url 'livros:home-page' %}">Todos</a>
+                  </li>
+                  <li>
+                    {% for categoria in Categorias %}
+                    <a href="{% url 'livros:home-page' %}?q1={{categoria.nome}}">{{categoria.nome}}</a>
+                    {% endfor %}
+                  </li>
+                </ul>
+              </li>
             </ul>
+          </nav>
 
             </ul>
         </nav>
@@ -133,7 +132,7 @@
     <!-- Bootstrap JS -->
     <script src="{% static 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js' %}" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
-
+    <script src="{% static 'livros/script.js' %}"></script>
 
 </body>
 </html>
