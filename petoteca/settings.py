@@ -73,7 +73,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'petoteca.wsgi.application'
 
-
+CSRF_TRUSTED_ORIGINS = [
+    'https://web-production-b04d.up.railway.app'
+]
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
