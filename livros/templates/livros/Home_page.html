@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="{% static 'livros/homebar.css' %}">
 
     <!-- Font Awesome JS -->
-    <script defer="" src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer="" src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <script defer="" src="{% static 'https://use.fontawesome.com/releases/v5.0.13/js/solid.js' %}" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer="" src="{% static 'https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js' %}" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -33,12 +33,12 @@
                     <ul class="list-unstyled collapse" id="homeSubmenu" style="">
                         <li>
 
-                                <a href="{% url 'livros:home-page' %}">Todos</a></h1>
+                                <a href="{% static url 'livros:home-page' %}">Todos</a></h1>
 
                         </li>
                         <li>
                             {% for categoria in Categorias %}
-                                <a href="{% url 'livros:home-page' %}?q1={{categoria.nome}}" >{{categoria.nome}}</a></h1>
+                                <a href="{% static url 'livros:home-page' %}?q1={{categoria.nome}}" >{{categoria.nome}}</a></h1>
                             {% endfor %}
                         </li>
                     </ul>
