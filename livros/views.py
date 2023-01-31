@@ -19,6 +19,3 @@ def home(request):
 
     context = {'livros':livros, 'Categorias':Categorias, 'livros_count': livros_count, 'pesquisa':pesquisa, 'categorias_count': categorias_count}
     return render(request, 'livros/Home_page.html',context)
-
-
-
