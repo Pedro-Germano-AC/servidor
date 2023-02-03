@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-4py#m8j*yhpf)&l2&p2#ry8x%7zo(#vx_h*88)ucwgbbv%&hxa
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -45,14 +45,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware", #Servidor (Host)
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware', #isso aqui
-    'whitenoise.middleware.WhiteNoiseMiddleware', #isso aqui
 ]
 
 ROOT_URLCONF = 'petoteca.urls'
@@ -76,8 +75,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'petoteca.wsgi.application'
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://web-production-b04d.up.railway.app'
+    'https://web-production-36d7c.up.railway.app'
 ]
+
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
@@ -125,11 +125,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILE_DIRS = [BASE_DIR/'static']
 
-STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / "staticfiles" # Servidor
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" # Servidor
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field
