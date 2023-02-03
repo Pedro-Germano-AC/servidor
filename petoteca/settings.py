@@ -75,7 +75,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'petoteca.wsgi.application'
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://web-production-36d7c.up.railway.app'
+    'web-production-b04d.up.railway.app'
 ]
 
 # Database
