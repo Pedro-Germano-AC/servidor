@@ -87,12 +87,12 @@ class Command(BaseCommand):
                 # cria um livro com os dados do dicionário, checando se ele já existe
                 book, created = Livro.objects.get_or_create(Codigo=book_dict['Codigo'].upper(), defaults={
                     'Disponivel': book_dict['Disponivel'] == "Sim" if book_dict['Disponivel'] else None,
-                    'Titulo': book_dict['Titulo'].title().strip() if book_dict['Titulo'] else None,
-                    'Autores': book_dict['Autores'].title().strip() if book_dict['Autores'] else None,
+                    'Titulo': book_dict['Titulo'].title() if book_dict['Titulo'] else None,
+                    'Autores': book_dict['Autores'].title() if book_dict['Autores'] else None,
                     'Volume': 1 if book_dict['Volume'] == "Único" else int(book_dict['Volume']) if book_dict['Volume'] else None,
                     'Edicao': int(re.sub(r"[^\d]", "", book_dict['Edicao'])) if book_dict['Edicao'] else None,
-                    'Estado': book_dict['Estado'].capitalize().strip() if book_dict['Estado'] else None,
-                    'Tipo': book_dict['Tipo'].capitalize().strip() if book_dict['Tipo'] else None,
+                    'Estado': book_dict['Estado'].capitalize() if book_dict['Estado'] else None,
+                    'Tipo': book_dict['Tipo'].capitalize() if book_dict['Tipo'] else None,
                     'Categoria': book_dict['Categoria'] if book_dict['Categoria'] else None,
                 })
 
