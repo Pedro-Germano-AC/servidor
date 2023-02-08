@@ -1,0 +1,7 @@
+{% autoescape off %}
+Olá, {{ user }}. Muito obrigado por se cadastrar no site da Petoteca. 
+
+Para verificar sua conta, por favor clique no link disponibilizado abaixo: 
+
+{{ protocol }}://{{ domain }}{% url 'login:ativar' uidb64=uid token=token %}
+{% endautoescape %}
